@@ -1,5 +1,6 @@
 package com.soumya.ekart.model.seller;
 
+import com.soumya.ekart.model.user.AppUser;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,4 +40,7 @@ public class Product {
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "product")
     private List<Review> review = new ArrayList<>();
+
+    @ManyToOne
+    private AppUser user;
 }
