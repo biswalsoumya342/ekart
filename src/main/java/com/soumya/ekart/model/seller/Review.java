@@ -24,12 +24,12 @@ public class Review {
     @Column(nullable = false)
     private Integer rating;
 
+    private LocalDateTime createdAt;
+
     @ManyToOne
     private AppUser user;
 
     @ManyToOne
     private Product product;
-
-    private LocalDateTime createdAt;
 
 }
